@@ -74,6 +74,9 @@ public class Card {
     public int seventhLine(){return 0;}
     public int eighthLine(){return 0;}
     public int ninthLine(){return 0;}
+    public String tenthLine(){return "";}
+    public String eleventhLine(){return "";}
+    public String twelfthLine(){return "";}
 
 
 
