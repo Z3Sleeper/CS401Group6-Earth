@@ -9,7 +9,7 @@ public class Climate extends Card {
     protected String event2;
 
     public Climate() {
-        name = "";
+        name = "placeholder";
         VP_effect = "";
         climate1 = "";
         climate2 = "";

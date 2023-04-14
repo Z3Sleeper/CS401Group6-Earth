@@ -11,7 +11,7 @@ public class Island extends Card {
 
 
     public Island() {
-        name = "";
+        name = "placeholder";
         baseVP = 0;
         Habitat1 = "";
         Habitat2 = "";

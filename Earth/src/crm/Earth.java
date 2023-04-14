@@ -24,7 +24,7 @@ public class Earth {
     // TODO: Everything else required here.
     public void GameStartBeginner() {
         boolean firstTurn = true;
-        int turns = 0;
+        int turns = 1;
         int inputInt1 = 0;
         int inputInt2 = 0;
         int inputInt3 = 0;
@@ -41,6 +41,8 @@ public class Earth {
 
                 // Give each player an Island and Climate card.
                 for (int i = 0; i < players.length; i++) {
+                    System.out.println();
+                    System.out.println("Dealing out Island and Climate cards to " + players[i].getName());
                     players[i].setIsland(new Island());
                     players[i].setClimate(new Climate());
                 }
@@ -54,8 +56,15 @@ public class Earth {
                 // and places them on the central area of their player board -- this creates their personal reserve.
                 // TODO: Fill in the code here for adding cards to player's hands based on their Island and Climate cards.
                 for (int i = 0; i < players.length; i++) {
+                    // FIXME: Insert a REAL print function for these cards below.
+                    System.out.println();
+                    System.out.println("Initializing " + players[i].getName() + "'s resources.");
+                    players[i].printIslandClimate();
+                    System.out.println("As per " + players[i].getName() + "'s Island card, they draw " + 1 + " card(s).");
                     players[i].drawCard(1, deck);
+                    System.out.println("As per " + players[i].getName() + "'s Island card, they must compost " + 1 + " card(s).");
                     players[i].compostCard(1);
+                    System.out.println("As per " + players[i].getName() + "'s Island card, they gain " + 1 + " soil.");
                     players[i].addSoil(0);
                 }
             }
@@ -64,10 +73,12 @@ public class Earth {
             // Cycle through players in order
             for (int i = 0; i < players.length; i++) {
 
-                System.out.println("Start turn " + turns + ".");
+                System.out.println();
+                System.out.println("Starting turn " + turns + ".");
 
                 // Print the fauna board.
                 printFaunaBoard();
+                System.out.println();
 
                 // Start i player's turn.
                 System.out.println(players[i].getName() + "'s turn.");
@@ -121,7 +132,8 @@ public class Earth {
     }
 
     private void intro(){
-        System.out.println("This is a console-based version of Earth");
+        System.out.println();
+        System.out.println("This is a console-based version of the Earth board game.\nYou may want to enlarge this window.");
         System.out.println();
     }
 
