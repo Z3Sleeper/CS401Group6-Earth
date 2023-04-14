@@ -51,7 +51,6 @@ public class Earth {
                 // Print player i's hand.
                 // Allow them to play a card or pass (NOTE: Not sure if passing is allowed, check rules)
                 // Print out their grid after playing a card.
-                // NOTE: Check if you're allowed to replace a card on the grid. If not, FIXME by fixing the 'playCard' function.
                 if (!players[i].handIsEmpty()) {
                     System.out.println(players[i].getName() + "'s hand.");
                     players[i].printHand();
