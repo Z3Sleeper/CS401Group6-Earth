@@ -1,17 +1,17 @@
- /*
- NEEDS MORE WORK 
+ 
+ //NEEDS MORE WORK 
  package crm;
 public class Terrain extends Card {
-    protected final String type = "     <Event>";
+    protected final String type = "     <Terrain>";
     protected String VP_effect;
-    protected String event1;
-    protected String event2;
+    protected String terrain1;
+    protected String terrain2;
 
-    public Event() {
+    public Terrain() {
         name = "";
         VP_effect = "";
-        event1 = "";
-        event2 = "";
+        terrain1 = "";
+        terrain2 = "";
     }
 
     public String getType(){
@@ -31,11 +31,10 @@ public class Terrain extends Card {
     }
 
     public String fourthLine(){
-        return event1;
+        return terrain1;
     }
 
     public String fifthLine(){
-        return event2;
+        return terrain2;
     }
 }
-*/
