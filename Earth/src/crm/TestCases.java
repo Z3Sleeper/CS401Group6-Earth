@@ -11,6 +11,7 @@ public class TestCases {
     // Testing to see if Giraffe's card effect works (properly assigns points)
     @Test
     public void testGiraffe() {
+
         PlayerBoard player = new PlayerBoard();
         player.loadEmptyGrid(new Card());
         List<Card> deck = new ArrayList<Card>();
@@ -37,9 +38,10 @@ public class TestCases {
         assertTrue(player.getPoints() > 0);
     }
 
-    // Testing the functionality of all the new playerboard token elements (sprout, soil, trunk, canopy)
+    // Testing the functionality of all the playerboard token elements (sprout, soil, trunk, canopy)
     @Test
     public void testTokens() {
+
         PlayerBoard player = new PlayerBoard();
 
         // Test if we properly gain tokens
@@ -53,4 +55,33 @@ public class TestCases {
         assertTrue(player.getTrunk() == 72);
     }
 
+    // Testing the functionality of the playerboard compost and discard functions
+    @Test
+    public void testCompostAndDiscard() {
+
+        PlayerBoard player = new PlayerBoard();
+        List<Card> deck = new ArrayList<Card>();
+
+        for (int i = 0; i < 8; i++) {
+            deck.add(new Card("test"));
+        }
+        player.drawCard(4, deck);
+
+        for (int i = 0; i < 4; i++) {
+            player.compostCard(1);;
+        }
+
+        // Test to see if we successfully composted our whole hand.
+        assertTrue(player.handIsEmpty());
+
+        player.drawCard(4, deck);
+        for (int i = 0; i < 4; i++) {
+            player.discardCard(1, deck);
+        }
+
+        // Test to see if we successfully discarded our whole hand.
+        // Test to see if the cards we discarded were returned to the deck.
+        assertTrue(player.handIsEmpty());
+        assertTrue(deck.size() == 4);
+    }
 }
