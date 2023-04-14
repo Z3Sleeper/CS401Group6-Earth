@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestCases {
-    // Any lead can be assigned to any online user
+
+    // Testing to see if Giraffe's card effect works (properly assigns points)
     @Test
     public void testGiraffe() {
         PlayerBoard player = new PlayerBoard();
@@ -35,4 +36,21 @@ public class TestCases {
         // Test if we properly gained points
         assertTrue(player.getPoints() > 0);
   }
+
+  // Testing the functionality of all the new playerboard token elements (sprout, soil, trunk, canopy)
+  @Test
+  public void testTokens() {
+      PlayerBoard player = new PlayerBoard();
+
+      // Test if we properly gain tokens
+      player.addSprout(1);
+      player.addSoil(2);
+      player.addCanopy(26);
+      player.addTrunk(72);
+      assertTrue(player.getSprout() == 1);
+      assertTrue(player.getSoil() == 2);
+      assertTrue(player.getCanopy() == 26);
+      assertTrue(player.getTrunk() == 72);
+}
+
 }

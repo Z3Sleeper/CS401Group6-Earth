@@ -21,6 +21,7 @@ public class PlayerBoard {
         trunk = 0;
         canopy = 0;
         points = 0;
+        loadEmptyGrid(new Card());
     }
 
     public int getBoardSize(){

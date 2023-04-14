@@ -101,7 +101,6 @@ public class Earth {
 
         for (int i = 0; i < inputInt; i++) {
             PlayerBoard p = new PlayerBoard();
-            p.loadEmptyGrid(new Card());
             System.out.print("Enter player " + (i+1) + "'s name: ");
             inputString = scan.nextLine();
             p.setName(inputString);
