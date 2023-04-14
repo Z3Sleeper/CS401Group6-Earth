@@ -80,6 +80,14 @@ public class PlayerBoard {
         return hand;
     }
 
+    public void setIsland(Island i){
+        island = i;
+    }
+
+    public void setClimate(Climate c){
+        climate = c;
+    }
+
     public void printIslandClimate(){
         System.out.println("Island: " + island.toString() + "\nClimate: " + climate.toString());
     }
