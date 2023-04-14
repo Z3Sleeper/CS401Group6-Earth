@@ -15,8 +15,12 @@ public class PlayerBoard {
     private List<Card> hand = new ArrayList<Card>();
 
     public PlayerBoard() {
-        this.name = "";
-        this.points = 0;
+        name = "";
+        sprout = 0;
+        soil = 0;
+        trunk = 0;
+        canopy = 0;
+        points = 0;
     }
 
     public int getBoardSize(){
@@ -31,16 +35,32 @@ public class PlayerBoard {
         return sprout;
     }
 
+    public void addSprout(int x) {
+        sprout += x;
+    }
+
     public int getSoil() {
         return soil;
+    }
+
+    public void addSoil(int x) {
+        soil += x;
     }
 
     public int getTrunk() {
         return trunk;
     }
 
+    public void addTrunk(int x) {
+        trunk += x;
+    }
+
     public int getCanopy() {
         return canopy;
+    }
+
+    public void addCanopy(int x) {
+        canopy += x;
     }
 
     public Card[][] getPlayGrid(){

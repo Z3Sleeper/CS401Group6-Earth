@@ -10,8 +10,6 @@ public class TestCases {
     // Any lead can be assigned to any online user
     @Test
     public void testGiraffe() {
-        Rule rule = new Rule("See if Giraffe works",
-        player -> player.getPoints() > 0);
         PlayerBoard player = new PlayerBoard();
         player.loadEmptyGrid(new Card());
         List<Card> deck = new ArrayList<Card>();
@@ -26,7 +24,7 @@ public class TestCases {
         player.addPoints(giraffe.cardEffect(player));
 
         // Test to see if we didn't gain points (we shouldn't be gaining any yet)
-        assertFalse(rule.pointsGained(player));
+        assertFalse(player.getPoints() > 0);
 
         player.drawCard(4, deck);
         for (int i = 0; i < 4; i++) {
@@ -35,6 +33,6 @@ public class TestCases {
         player.addPoints(giraffe.cardEffect(player));
 
         // Test if we properly gained points
-        assertTrue(rule.pointsGained(player));
+        assertTrue(player.getPoints() > 0);
   }
 }
