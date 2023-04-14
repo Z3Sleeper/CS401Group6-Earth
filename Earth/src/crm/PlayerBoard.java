@@ -11,6 +11,8 @@ public class PlayerBoard {
     private int trunk;
     private int canopy;
     private int points;
+    private Climate climate;
+    private Island island;
     private Card[][] playGrid = new Card[boardSize][boardSize];
     private List<Card> hand = new ArrayList<Card>();
 
@@ -21,6 +23,8 @@ public class PlayerBoard {
         trunk = 0;
         canopy = 0;
         points = 0;
+        climate = new Climate();
+        island = new Island();
         loadEmptyGrid(new Card());
     }
 
@@ -74,6 +78,10 @@ public class PlayerBoard {
 
     public List<Card> getHand(){
         return hand;
+    }
+
+    public void printIslandClimate(){
+        System.out.println("Island: " + island.toString() + "\nClimate: " + climate.toString());
     }
     
     public void loadEmptyGrid(Card x){

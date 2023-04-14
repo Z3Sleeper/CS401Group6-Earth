@@ -23,15 +23,38 @@ public class Earth {
     // Everything else (not listed in 'Earth()') in the game happens here.
     // TODO: Everything else required here.
     public void GameStartBeginner() {
+        boolean firstTurn = true;
+        int turns = 0;
         int inputInt1 = 0;
         int inputInt2 = 0;
         int inputInt3 = 0;
         boolean quit = false;
 
         while (!quit) {
+
+            // Start of game setup.
+            
+            if (firstTurn) {
+                
+                // Print the fauna board.
+                printFaunaBoard();
+
+                // Each player draws a number of Earth cards as indicated on their ISLAND card. After reviewing these cards,
+                // players choose which ones they want to keep in their hand, and which they will Compost.
+
+                // They must Compost from their hand the number of cards as indicated on their ISLAND card. To Compost a card, the
+                // player simply removes it from their hand and places it facedown on the Compost icon on their player board
+                // -- this creates their personal Compost. 
+                // Each player takes the number of Soil indicated on their ISLAND card
+                // and places them on the central area of their player board -- this creates their personal reserve.
+
+            }
+
             // Round Start
             // Cycle through players in order
             for (int i = 0; i < players.length; i++) {
+
+                System.out.println("Start turn " + turns + ".");
 
                 // Print the fauna board.
                 printFaunaBoard();
@@ -76,6 +99,9 @@ public class Earth {
                 System.out.println();
                 System.out.println();
             }
+
+            turns += 1;
+            System.out.println("End turn " + turns + ".");
             System.out.print("Continue? (0 = no | 1 = yes): ");
             inputInt1 = scan.nextInt();
             if (inputInt1 == 0) {
