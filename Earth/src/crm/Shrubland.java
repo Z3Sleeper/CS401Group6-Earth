@@ -3,7 +3,7 @@ package crm;
 public class Shrubland extends Terrain{
     public Shrubland() {
         name = "    Shrubland       ";
-        VP_effect = "+1";
+        VP_effect = " ";
         terrain1 = " "; 
         terrain2 = " "; //ADD card effect
         
