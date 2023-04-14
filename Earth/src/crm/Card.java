@@ -70,10 +70,13 @@ public class Card {
         return "";
     }
 
+
+    // Do these have to be ints?
     public int sixthLine(){return 0;}
     public int seventhLine(){return 0;}
     public int eighthLine(){return 0;}
     public int ninthLine(){return 0;}
+    
     public String tenthLine(){return "";}
     public String eleventhLine(){return "";}
     public String twelfthLine(){return "";}

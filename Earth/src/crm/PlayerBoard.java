@@ -6,6 +6,10 @@ import java.util.ArrayList;
 public class PlayerBoard {
     private final int boardSize = 4;
     private String name;
+    private int sprout;
+    private int soil;
+    private int trunk;
+    private int canopy;
     private int points;
     private Card[][] playGrid = new Card[boardSize][boardSize];
     private List<Card> hand = new ArrayList<Card>();
@@ -21,6 +25,22 @@ public class PlayerBoard {
 
     public String getName() {
         return name;
+    }
+
+    public int getSprout() {
+        return sprout;
+    }
+
+    public int getSoil() {
+        return soil;
+    }
+
+    public int getTrunk() {
+        return trunk;
+    }
+
+    public int getCanopy() {
+        return canopy;
     }
 
     public Card[][] getPlayGrid(){
