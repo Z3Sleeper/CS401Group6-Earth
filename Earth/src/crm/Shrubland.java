@@ -5,7 +5,7 @@ public class Shrubland extends Terrain{
         name = "    Shrubland       ";
         VP_effect = "+1";
         terrain1 = " "; 
-        terrain2 = " ";
+        terrain2 = " "; //ADD card effect
         
     }
 }
