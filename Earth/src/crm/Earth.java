@@ -36,18 +36,28 @@ public class Earth {
             
             if (firstTurn) {
                 
-                // Print the fauna board.
+                // Print the fauna board. Do we need to here? I don't know.
                 printFaunaBoard();
+
+                // Give each player an Island and Climate card.
+                for (int i = 0; i < players.length; i++) {
+                    players[i].setIsland(new Island());
+                    players[i].setClimate(new Climate());
+                }
 
                 // Each player draws a number of Earth cards as indicated on their ISLAND card. After reviewing these cards,
                 // players choose which ones they want to keep in their hand, and which they will Compost.
-
                 // They must Compost from their hand the number of cards as indicated on their ISLAND card. To Compost a card, the
                 // player simply removes it from their hand and places it facedown on the Compost icon on their player board
                 // -- this creates their personal Compost. 
                 // Each player takes the number of Soil indicated on their ISLAND card
                 // and places them on the central area of their player board -- this creates their personal reserve.
-
+                // TODO: Fill in the code here for adding cards to player's hands based on their Island and Climate cards.
+                for (int i = 0; i < players.length; i++) {
+                    players[i].drawCard(1, deck);
+                    players[i].compostCard(1);
+                    players[i].addSoil(0);
+                }
             }
 
             // Round Start
@@ -63,7 +73,7 @@ public class Earth {
                 System.out.println(players[i].getName() + "'s turn.");
 
                 // Card Drawing
-                // NOTE: Not sure if this belongs here. Haven't read the rules up to here yet, was just testing functionality.
+                // FIXME: Not sure if this belongs here. Haven't read the rules up to here yet, was just testing functionality.
                 System.out.println(players[i].getName() + " draws " + 1 + " card.");
                 players[i].drawCard(1, this.deck);
 

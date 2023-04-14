@@ -15,6 +15,7 @@ public class PlayerBoard {
     private Island island;
     private Card[][] playGrid = new Card[boardSize][boardSize];
     private List<Card> hand = new ArrayList<Card>();
+    private List<Card> compost = new ArrayList<Card>();
 
     public PlayerBoard() {
         name = "";
@@ -166,11 +167,12 @@ public class PlayerBoard {
     }
 
     // Draw x amount of cards.
+    // The List<Card> parameter is fulfilled by the deck in the Earth class.
     // Check if the deck is empty before attempting to draw.
     public void drawCard(int x, List<Card> d) {
         for (int a = 0; a < x; a++) {
             if (!d.isEmpty() && hand.size() < 5) {
-                this.hand.add(d.get(d.size() - 1));
+                hand.add(d.get(d.size() - 1));
                 d.remove((d.size() - 1));
             }
             else {
@@ -182,6 +184,28 @@ public class PlayerBoard {
                 }
                 break;
             }
+        }
+    }
+
+    // Move a card to the compost.
+    public void compostCard(int x) {
+        if (x <= hand.size() && x >= 0 && hand.size() > 0) {
+            compost.add(hand.get(x-1));
+            hand.remove(hand.get(x-1));
+        }
+        else {
+            System.out.println("Your hand is empty.");
+        }
+    }
+
+    // Discard a card from hand and add it back to the deck.
+    public void discardCard(int x, List<Card> d) {
+        if (x <= hand.size() && x >= 0 && hand.size() > 0) {
+            d.add(0, hand.get(x-1));
+            hand.remove(hand.get(x-1));
+        }
+        else {
+            System.out.println("Your hand is empty.");
         }
     }
 
