@@ -1,7 +1,8 @@
-# HW-3
-CS 401 HW 3
+# Group Project : Earth Board Game
+![image](https://user-images.githubusercontent.com/37034734/232109686-c4fe3956-0319-4203-8a4e-54c27253f391.png)
+CS 401 HW 5
 
-roles for HW3:
+roles for HW5:
 Designer: Salvador Martinez
 - Make design choices
 - Implement code based on design 
