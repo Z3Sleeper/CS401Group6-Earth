@@ -56,14 +56,17 @@ public class Earth {
                 // and places them on the central area of their player board -- this creates their personal reserve.
                 // TODO: Fill in the code here for adding cards to player's hands based on their Island and Climate cards.
                 for (int i = 0; i < players.length; i++) {
-                    // FIXME: Insert a REAL print function for these cards below.
                     System.out.println();
                     System.out.println("Initializing " + players[i].getName() + "'s resources.");
+                    // FIXME: Insert a REAL print function for these cards below.
                     players[i].printIslandClimate();
+                    // FIXME: Implement the cards' actual card draw values here.
                     System.out.println("As per " + players[i].getName() + "'s Island card, they draw " + 1 + " card(s).");
                     players[i].drawCard(1, deck);
+                    // FIXME: Implement the cards' actual card compost values here.
                     System.out.println("As per " + players[i].getName() + "'s Island card, they must compost " + 1 + " card(s).");
                     players[i].compostCard(1);
+                    // FIXME: Implement the cards' actual soil gain values here.
                     System.out.println("As per " + players[i].getName() + "'s Island card, they gain " + 1 + " soil.");
                     players[i].addSoil(0);
                 }
